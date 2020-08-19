@@ -4,11 +4,15 @@ const io = require('socket.io')(3000);
 var UserList = {};
 
 io.on('connection', socket => {
-	console.log(`Connnected  : ${socket.id} `);
 	socket.emit('somthing', "nothing");
-	UserList[socket.id] = "name";
 
-	socket.broadcast.emit('join',UserList[socket.id]);
+	socket.on('new-User', name => {
+		UserList[socket.id] = name;
+		socket.broadcast.emit('join',name);
+		console.log(`${name} joined`)
+		console.log(UserList);
+	});
+
 	
 	socket.on("send-message", data => {
 		let name = data['name'];
@@ -18,9 +22,10 @@ io.on('connection', socket => {
 	});
 
 	socket.on('disconnect',() => {
+		console.log(`Disconnected ${UserList[socket.id]}`);
+		socket.broadcast.emit('left',UserList[socket.id]);
 		delete UserList[socket.id];
-		console.log("Disconnected ${socket.id}");
-		socket.broadcast.emit('left',socket.id);
+		console.log(UserList);
 	});
 });
 
