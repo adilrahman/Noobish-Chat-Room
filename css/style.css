@@ -1,0 +1,21 @@
+.title{
+	
+	color: white;
+	height: 45px;
+	margin-bottom: 10px;
+
+
+}
+.formContainer{ 
+              width: 50%;
+              position: fixed;
+              right:25%;
+              bottom: 10px;
+              margin-left: 50%;
+            } 
+.join {
+	 margin-left: 40%;
+}
+.disconnect {
+	 margin-left: 39%;
+}
