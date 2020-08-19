@@ -1,6 +1,6 @@
 # Noobish-Chat-Room
 
-### One line install 
+### One line install
 ```bash
  
  git clone https://github.com/adilrahman/Noobish-Chat-Room.git && cd Noobish-Chat-Room && chmod +x setup.sh && sudo ./setup.sh 
@@ -8,9 +8,15 @@
 ```
 
 ### Usage
-> python -m SimpleHTTPServer <port>
-> node server.js
-> Vist : `http://host:port`
+```
+cd Noobish-Chat-Room
+
+python -m SimpleHTTPServer 
+
+node server.js #another shell
+```
+
+Vist : http://localhost:8000
 
 
 
