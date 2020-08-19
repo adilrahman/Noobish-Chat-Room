@@ -10,7 +10,6 @@ init()
 {
 	if  which node &>/dev/null ;then
 		echo "[+] NodeJs Installed"
-		
 	else
 		echo "------------- Installing NodeJs -----------------"
 		command apt-get install nodejs
@@ -22,16 +21,16 @@ init()
 	else
 		echo "------------- Installing Npm -----------------"
 		command apt-get install npm 
-
-
 	fi
-	
-	
 
+	npm init -y &>/dev/null
+	npm i socket.io
 
 }
+
 
 [ $(id | cut -d= -f2 | cut -d'(' -f1) -ne 0 ] && usage 
 
 init
+
 
