@@ -6,7 +6,7 @@ const name = prompt("Enter you name : ");
 
 if(name !== null && name !== "")
 {
-	const socket = io('http://localhost:3000');
+	const socket = io('http://192.168.43.218:3000');
 	socket.emit('new-User', name);
 
 	form.addEventListener('submit', event => {
